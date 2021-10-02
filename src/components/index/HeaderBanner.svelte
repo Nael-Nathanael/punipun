@@ -5,7 +5,8 @@
 </script>
 
 <header>
-    <div class="{hovered === 1 ? 'active' : 'nonactive'} imgcontainer" on:mouseenter={() => hovered = 1}>
+    <div class="{hovered === 1 ? 'active' : 'nonactive'} imgcontainer d-lg-block d-none"
+         on:mouseenter={() => hovered = 1}>
         <img alt="Banner 1"
              src="{BANNER_1}">
         <div class="overlay">
@@ -36,28 +37,47 @@
         </div>
     </div>
 
-    <div class="{hovered === 5 ? 'active' : 'nonactive'} imgcontainer" on:mouseenter={() => hovered = 5}>
+    <div class="{hovered === 5 ? 'active' : 'nonactive'} imgcontainer d-lg-block d-none"
+         on:mouseenter={() => hovered = 5}>
         <img alt="Banner 5"
              src="{BANNER_5}">
         <div class="overlay">
 
         </div>
     </div>
+
+
+    <div class="position-absolute bottom-0 start-50 translate-middle w-100 pb-5 pb-lg-3">
+        <h1>
+            Clarissa Punipun Fan-Concept Website
+        </h1>
+        <h1>
+            クラリッサ プニプン
+        </h1>
+    </div>
 </header>
 
 
 <style>
+    h1 {
+        text-align: center;
+        margin: 0;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 5px black;
+        color: white;
+    }
+
     header {
         height: 100vh;
         background: linear-gradient(0deg, rgba(53, 19, 108, 1) 0%, rgba(53, 19, 108, .8) 100%);
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
     }
 
     .imgcontainer {
         height: 100%;
-        width: 20%;
         transition: all .15s ease-in-out;
         position: relative;
     }
@@ -93,4 +113,13 @@
         position: relative;
     }
 
+    @media (max-width: 1200px) {
+        .imgcontainer.active {
+            width: 60%;
+        }
+
+        .imgcontainer.nonactive {
+            width: 20%;
+        }
+    }
 </style>

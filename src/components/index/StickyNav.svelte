@@ -1,66 +1,48 @@
-<nav>
-    <div class="topside">
-        <h1>
-            Clarissa Punipun Official Website
-        </h1>
-        <h1>
-            クラリッサ プニプン
-        </h1>
-    </div>
-    <div class="botside">
-        <a class="nav-item-custom" href="/">Home</a>
-        <a class="nav-item-custom" href="#">Shop</a>
-        <a class="nav-item-custom" href="#">Events</a>
-        <a class="nav-item-custom" href="#">Games & Equipments</a>
-        <a class="nav-item-custom" href="#">Endorsement</a>
-        <a class="nav-item-custom" href="#">Contacts</a>
-    </div>
+<script>
+    import {onMount} from "svelte";
+
+    let y;
+    let threshold = 1000;
+
+    onMount(() => {
+        threshold = vhToPixels(100)
+        console.log(threshold)
+    })
+
+    function vhToPixels(vh) {
+        return Math.round(window.innerHeight / (100 / vh)) - 100;
+    }
+</script>
+
+<svelte:window bind:scrollY={y}/>
+
+<nav class="w-100 position-sticky d-flex flex-wrap justify-content-center align-items-center bg-light {y > threshold ? 'threshold-reach' : ''}">
+    <a href="/">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">Events</a>
+    <a href="#">Games & Equipments</a>
+    <a href="#">Endorsement</a>
+    <a href="#">Contacts</a>
 </nav>
 
 <style>
-
     nav {
-        position: sticky;
-        top: -120px;
-        width: 100%;
-        height: 120px;
-        margin-top: -120px;
+        transition: all .25s ease-in-out;
+        transform: translateY(-100%);
+        min-height: 40px;
+        top: 0;
+        z-index: 2000;
     }
 
-    nav > div {
-        padding-top: 10px;
-        padding-bottom: 10px;
+    nav.threshold-reach {
+        transform: unset;
     }
 
-    .topside {
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .botside {
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-    }
-
-    .nav-item-custom {
+    a {
         text-decoration: none;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin: 2px 20px;
         color: rgb(53, 19, 108);
         display: block;
-    }
-
-    h1 {
-        text-align: center;
-        margin: 0;
-        text-transform: uppercase;
-        font-size: xx-large;
-        text-shadow: 2px 2px 5px black;
-        color: white;
+        font-size: 13px;
     }
 </style>

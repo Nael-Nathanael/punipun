@@ -2,7 +2,7 @@
     import {PROFILE_1, PROFILE_2, PROFILE_3} from "../../helpers/StaticImageReferencer.svelte";
 </script>
 
-<div class="container">
+<div>
     <div class="row">
         <div class="col-lg-3 mb-4">
             <h2 class="exo2 light mb-2 invisible">Puni's Profile</h2>
@@ -100,8 +100,9 @@
                 </div>
             </div>
         </div>
-
-        <div class="col-lg-9 mb-4">
+    </div>
+    <div class="row">
+        <div class="col-lg-9 mb-4 order-2 order-lg-0">
             <div class="card shadow-sm">
                 <div class="card-body position-relative">
                     <h4 class="exo2 light mb-2">Occupation</h4>
@@ -181,16 +182,17 @@
         <div class="col-lg-3 mb-4">
             <div class="imgStickContainer">
                 <img alt="" class="mb-2" src="{PROFILE_2}">
-                <h3 class="text-white exo2">
+                <h3 class="text-white exo2 d-none d-lg-inline-block">
                     Punipun
                 </h3>
             </div>
         </div>
-
+    </div>
+    <div class="row">
         <div class="col-lg-3 mb-4">
             <div class="imgStickContainer">
                 <img alt="" class="mb-2" src="{PROFILE_3}">
-                <h3 class="text-white exo2">
+                <h3 class="text-white exo2 d-none d-lg-inline-block">
                     Punipun
                 </h3>
             </div>
@@ -306,6 +308,14 @@
         width: 100%;
         position: sticky;
         top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .imgStickContainer > img {
+        max-width: 300px;
     }
 
     h2,

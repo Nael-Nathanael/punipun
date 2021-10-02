@@ -12,14 +12,7 @@
 <HeaderBanner/>
 <StickyNav/>
 
-<main>
+<main class="pt-0 pb-2 container">
     <NewestVideoAndMusic/>
     <FullProfile />
 </main>
-
-<style>
-    main {
-        padding: 20px;
-        background-color: rgb(53, 19, 108);
-    }
-</style>
