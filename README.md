@@ -1,3 +1,5 @@
+Archived. Currently I have no time to complete this, but I really want to. Sometime in the future I will complete this.
+
 # Fan Website for Punipun.com
 
 Hobby project, feel free to join. Left me some message in issues, make pull request, and communicate ^^;
